@@ -6,13 +6,32 @@
 header {
     background-color: #0066cc;
     width: 100vw;
-    height: 10vh;
+    height: 15vh;
     display: flex;
+    justify-content:space-between;
+    padding: 28px, 30px, 28px, 30px;
+    box-shadow: 0px 1px 3px;
 }
-
 h1 {
+    font-size: 40px;
     display: flex;
     color: white;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 6rem;
+}
+
+div {
+    display: flex;
+    padding-right: 6rem;
+    align-items: center;
+}
+
+.links-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    font-size: 24px;
+    padding-left: 16px;
 }
