@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *, *:before, *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     max-width: 100%;
     font-family: "Poppins", "serif";
     } 
 
 body{
-    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,21 +20,21 @@ header {
     justify-content:space-between;
     padding: 28px, 30px, 28px, 30px;
     box-shadow: 0px 4px 3px rgb(151, 151, 151);
+    position: sticky;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 400;
     display: flex;
     color: white;
     align-items: center;
     padding-left: 6rem;
-    line-height: 55.2px;
+    line-height: 10vh;
 }
 
 div {
     display: flex;
-    padding-right: 6rem;
     align-items: center;
     color:rgb(255, 255, 255)
 }
@@ -43,6 +42,7 @@ div {
 .links-header{
     display: flex;
     justify-content: space-between;
+    padding-right: 6rem;
 }
 
 a {
@@ -70,15 +70,94 @@ h2 {
     display: flex;
     width: 100vw;
     justify-content: center;
-    height: 30vh;
+    height: 33vh;
     padding-top: 32px;
     gap: 125px;
+    background-color: #ebebeb;
+    overflow: hidden;
 }
 
-img {
+.pfp {
     width: 247px;
     height: 247px;
     border-radius:100%;
     flex-shrink: 0;
-    margin-left: 10vw;
+    margin-left: 1vw;
+    box-shadow: 4px 4px 3px rgb(151, 151, 151);
+}
+
+.list-section {
+    display: flex;
+    height: 30vh;
+    padding: 20px;
+    padding-right: 4.5vw;
+    max-height: fit-content;
+    justify-content: center;
+}
+
+.hobbies, .top {
+    width: 595px;
+    height: 249px;
+    margin-left:5rem;
+    align-items: start;
+    color: black;
+    display: block;
+}
+
+.hobbies {
+    justify-content: right;
+    margin: 1vw;
+}
+
+.top {
+    justify-content: left;
+    margin: 1vw;
+}
+
+li {
+    list-style: none;
+}
+
+#left.text {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.list-hobbies {
+    display: flex;
+    gap: 0.5vw;
+    justify-content: end;
+    width: 555px;
+    flex-shrink: unset;
+}
+
+li div {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+li div {
+    background-color: #0066cc;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 4px 4px 3px rgb(151, 151, 151);
+    border-radius: 7%;
+    width: 103px;
+    height: 150px;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+.list-top {
+    display: flex;
+    gap: 0.5vw;
+    justify-content: start;
+    width: 555px;
+    flex-shrink: unset;
+    padding-left: 0;
 }
