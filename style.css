@@ -20,7 +20,7 @@ header {
     display: flex;
     justify-content:space-between;
     padding: 28px, 30px, 28px, 30px;
-    box-shadow: 0px 4px 3px rgb(151, 151, 151);
+    box-shadow: 0px 4px 3px rgb(207, 207, 207);
     position: sticky;
 }
 
@@ -98,20 +98,18 @@ h2 {
 
 .list-section {
     display: flex;
-    height: 30vh;
-    margin: 20px;
     margin-right: 4.5vw;
+    margin-left: 4.5vw;
     max-height: fit-content;
     justify-content: end;
 }
 
 .hobbies, .top {
-    width: 595px;
-    height: 249px;
     margin-left:5rem;
     align-items: start;
     color: black;
     display: block;
+    padding: 1vw;
 }
 
 .hobbies {
@@ -163,6 +161,8 @@ li div {
     border-radius: 7%;
     width: 8vw;
     height: 12vw;
+    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 h3 {
