@@ -62,7 +62,7 @@ div {
     justify-content: center;
 }
 
-.links-header{
+.links-header {
     display: flex;
     justify-content: space-between;
     padding-right: 6rem;
@@ -131,7 +131,7 @@ div.sections {
 }
 
 .hobbies, .top {
-    margin-left:5rem;
+    margin-left: 5rem;
     align-items: start;
     color: black;
     display: block;
@@ -192,7 +192,7 @@ li div {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2vh;
     color: rgb(255, 255, 255);
 }
 
@@ -251,7 +251,11 @@ h3 {
     box-shadow: 4px 4px 3px rgb(49, 49, 49);
 }
 
-@media only screen and (max-width: 1432px) {
+.hamburger-menu, .sidebar {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
     header {
         margin: 0;
         padding: 0;
@@ -262,10 +266,96 @@ h3 {
         padding: 0;
 
     }
-    .links-header {
-        padding-right: 0rem;
-        margin-right: 0;
+    aside.sidebar {
+        transition: translate var(--animation-timing);
+        translate: 200%;
+        display: none;
+        flex-direction: column;
+        margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 7rem);
+        background-color: #0066cc;
+        max-width: 10rem;
+        width: 28vw;
+        box-shadow: 4px 1px 1px rgb(49, 49, 49);
+        border-radius: 4%;
+    }
+
+    .link {
+        height: 4vh;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .hamburger-menu:has(input:checked) + .sidebar {
+        translate: 0;
+        display: block;
+    }
+
+    .hamburger-menu {
+        --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        gap: var(--hamburger-gap);
+        position: absolute;
+        top: var(--hamburger-margin);
+        right: var(--hamburger-margin);
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger-menu input {
+        appearance: none;
         padding: 0;
+        margin: 0;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .hamburger-menu input:checked {
+        opacity: 0;
+        width: 0;
+    }
+
+    .hamburger-menu::before,
+    .hamburger-menu::after,
+    .hamburger-menu input {
+        content: "";
+        width: var(--bar-width);
+        height: var(--bar-height);
+        background-color: var(--foreground);
+        border-radius: 99999px;
+        transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
+        transform-origin: left center;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        rotate: 45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / -2);
+    }
+
+    .hamburger-menu:has(input:checked)::after {
+        rotate: -45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / 2);
+    }
+
+    :root {
+        --bar-width: 40px;
+        --bar-height: 4px;
+        --hamburger-gap: 6px;
+        --foreground: #ffffff;
+        --background: white;
+        --hamburger-margin: 35px;
+        --hamburger-right: 15px;
+        --animation-timing: 200ms ease-in-out;
+        --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2)
+    }
+
+    nav.links-header {
+        display: none;
     }
 
     a {
@@ -309,14 +399,22 @@ h3 {
     .list-top {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
     }
-    .list-top div {
+    .nome {
         box-sizing: border-box;
+        flex: 1 1 20%;
+        min-width: 10vh;
+        width: 11vh;
+        height: 15vh;
+    }
+
+    h3 {
+        font-size: 1.5vh;
     }
 
     .list-top {
-        gap: 1vw;
+        gap: 3.5vw;
         padding-left: 0;
     }
 
@@ -331,11 +429,6 @@ h3 {
     .hobbies {
         display: flex;
         flex-wrap: wrap;
-    }
-
-    div.nome {
-        width: 20vw;
-        height: 20vh;
     }
 
     .footer {
@@ -372,6 +465,7 @@ h3 {
         margin-bottom: 20vh;
         font-size: 1rem;
     }
+
 
 
 }
